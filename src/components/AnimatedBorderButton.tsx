@@ -1,5 +1,4 @@
-import {ReactNode} from 'react';
-import { Download } from "lucide-react";
+import type {ReactNode} from 'react';
 
 interface AnimatedBorderButtonProps {
     children: ReactNode;

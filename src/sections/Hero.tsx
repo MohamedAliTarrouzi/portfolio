@@ -1,4 +1,3 @@
-import { Experience } from './Experience';
 import { Button } from '@/components/Button';
 import { AnimatedBorderButton } from '@/components/AnimatedBorderButton';
 import { ArrowRight, Download, ChevronDown } from 'lucide-react';
