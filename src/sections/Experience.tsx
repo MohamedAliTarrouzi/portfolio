@@ -2,33 +2,34 @@ const experiences = [
   {
     period: "2022 - Present",
     role: "AI & Data Science Student",
-    company: "École Marocaine des Sciences de l'Ingénieur (EMSI) ",
-    description: "",
-    technologies: [],
+    company: "École Marocaine des Sciences de l'Ingénieur (EMSI)",
+    description:
+      "State Engineering Degree candidate specializing in Artificial Intelligence & Data Science. Deepening knowledge in Machine Learning, Deep Learning, Software Architecture, RAG systems, and Distributed Databases.",
+    technologies: ["Python", "C++", "Java", "SQL", "AI Engineering","Deep Learning", "Data Science"],
     current: true,
   },
   {
-    period: "July 2026 - Auguest 2026",
+    period: "July 2026 - August 2026",
     role: "AI Engineer Intern",
     company: "DXC Technology Morocco",
     description:
-      "Delivered an intelligent credentials scanning application that finds misplaced secrets and flags them",
+      "Delivered an intelligent credentials scanning application that detects misplaced secrets in codebase repositories, calculates Shannon entropy, and flags potential security threats using LLM models.",
     technologies: [
       "Python",
       "FastAPI",
       "React",
       "LiteLLMGateway",
       "SQLite",
-      "ClaudeAPI",
+      "Claude API",
     ],
     current: false,
   },
   {
-    period: "July 2025 - Auguest 2025",
+    period: "July 2025 - August 2025",
     role: "Software Engineer Intern",
-    company: "Ministery of Justice Morocco",
+    company: "Ministry of Justice Morocco",
     description:
-      "Delivered an application that stores and manages recommandations utilised bu different ministery users and inspectors",
+      "Delivered a centralized application that stores and manages administrative recommendations utilized by different ministry users, department managers, and inspectors.",
     technologies: ["Python", "Django", "HTML", "CSS", "MSSQL"],
     current: false,
   },
@@ -36,56 +37,72 @@ const experiences = [
 
 export const Experience = () => {
   return (
-    <section id="experience" className="py-32 relative overflow-hidden">
+    <section id="experience" className="py-32 relative overflow-hidden scroll-mt-24">
       <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2" />
       <div className="container mx-auto px-6 relative z-10">
-        {/*Section Header*/}
-        <div className="max-w-3xl mb-15">
-          <span
-            className="text-secondary-foreground text-sm
-           font-medium tracking-wider uppercase animate-fade-in"
-          >
-            Academic Journey
+        {/* Section Header */}
+        <div className="max-w-3xl mb-16">
+          <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in">
+            Academic & Industry Journey
           </span>
-          <h2
-            className="text-4xl md:text-5xl font-bold
-           mt-4 mb-6 animate-fade-in animation-delay-100
-            text-secondary-foreground"
-          >
+          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
             Experience that{" "}
             <span className="font-serif italic font-normal text-white">
-            shows potential.
+              demonstrates impact.
             </span>
           </h2>
-          <p
-            className="text-muted-foreground
-           animate-fade-in animation-delay-200"
-          >
-            A timeline showcasing my journey so far. 
+          <p className="text-muted-foreground animate-fade-in animation-delay-200">
+            A chronological timeline showcasing my education and engineering internships.
           </p>
         </div>
-        {/*Timeline*/}
+
+        {/* Timeline */}
         <div className="relative">
-          <div className="timeline-glow absolute left-0 md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary/70 via-primary/30 to-transparent md:-translate-x-1/2 shadow-[0_0_25px_rgba(139,92,246,0.8)]"/>
-          {/*Experience Items*/}
+          <div className="timeline-glow absolute left-0 md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary/70 via-primary/30 to-transparent md:-translate-x-1/2 shadow-[0_0_25px_rgba(139,92,246,0.8)]" />
+          
+          {/* Experience Items */}
           <div className="space-y-12">
-            {experiences.map((exp,idx)=>(
-              <div key={idx} className="relative grid md:grid-cols-2 gap-8 animate-fade-in" style={{ animationDelay: `${(idx + 1) * 150}ms` }}>
-                {/*Timeline Dot*/}
-                <div className="absolute left-0 md:left-1/2 top-0 w-3 h-3 bg-primary rounded-full -translate-x-1/2 ring-4 ring-background z-10">
-                {exp.current && <span className="absolute inset-0 rounded-full bg-primary animate-ping opacity-75"/>}
+            {experiences.map((exp, idx) => (
+              <div
+                key={idx}
+                className="relative grid md:grid-cols-2 gap-8 animate-fade-in"
+                style={{ animationDelay: `${(idx + 1) * 150}ms` }}
+              >
+                {/* Timeline Dot */}
+                <div className="absolute left-0 md:left-1/2 top-0 w-3.5 h-3.5 bg-primary rounded-full -translate-x-1/2 ring-4 ring-background z-10">
+                  {exp.current && (
+                    <span className="absolute inset-0 rounded-full bg-primary animate-ping opacity-75" />
+                  )}
                 </div>
 
-                {/*Content*/}
-                <div className={`pl-8 md:pl-0 ${idx % 2 === 0 ? "md:pr-16 md:text-right":"md:col-start-2 md:pl-16"}`}>
-                  <div className={`glass p-6 rounded-2xl border border-primary/30 hover:border-primary/50 transition-all duration-500`}>
-                    <span className="text-sm text-primary font-medium">{exp.period}</span>
-                    <h3 className="text-xl font-semibold mt-2">{exp.role}</h3>
-                    <p className="text-muted-foreground">{exp.company}</p>
-                    <p className="text-sm text-muted-foreground mt-4">{exp.description}</p>
-                    <div className={`flex flex-wrap gap-2 mt-4 ${idx % 2 === 0 ? "md:justify-end":""}`}>
-                      {exp.technologies.map((tech, techIdx)=>(
-                        <span key={techIdx} className="px-3 py-1 bg-surface text-xs rounded-full text-muted-foreground">{tech}</span>
+                {/* Content Card */}
+                <div
+                  className={`pl-8 md:pl-0 ${
+                    idx % 2 === 0
+                      ? "md:pr-16 md:text-right"
+                      : "md:col-start-2 md:pl-16"
+                  }`}
+                >
+                  <div className="glass p-6 rounded-2xl border border-primary/30 hover:border-primary/50 transition-all duration-500 hover:shadow-xl">
+                    <span className="text-sm text-primary font-semibold tracking-wide">
+                      {exp.period}
+                    </span>
+                    <h3 className="text-xl font-bold mt-2 text-foreground">{exp.role}</h3>
+                    <p className="text-muted-foreground font-medium text-sm mt-1">{exp.company}</p>
+                    <p className="text-sm text-muted-foreground mt-4 leading-relaxed">{exp.description}</p>
+
+                    <div
+                      className={`flex flex-wrap gap-2 mt-4 ${
+                        idx % 2 === 0 ? "md:justify-end" : ""
+                      }`}
+                    >
+                      {exp.technologies.map((tech, techIdx) => (
+                        <span
+                          key={techIdx}
+                          className="px-3 py-1 bg-surface border border-border/40 text-xs rounded-full text-muted-foreground font-medium"
+                        >
+                          {tech}
+                        </span>
                       ))}
                     </div>
                   </div>

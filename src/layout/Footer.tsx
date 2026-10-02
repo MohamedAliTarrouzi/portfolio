@@ -1,12 +1,21 @@
-import { FaLinkedin, FaGithub  } from 'react-icons/fa';
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 const socialLinks = [
-  { icon: FaLinkedin, href: "#", label: "LinkedIn" },
-  { icon: FaGithub, href: "#", label: "GitHub" },
+  {
+    icon: FaLinkedin,
+    href: "https://www.linkedin.com/in/mohamed-ali-tarrouzi-209735286/",
+    label: "LinkedIn Profile",
+  },
+  {
+    icon: FaGithub,
+    href: "https://github.com/MohamedAliTarrouzi",
+    label: "GitHub Profile",
+  },
 ];
 
 const footerLinks = [
   { href: "#about", label: "About" },
+  { href: "#skills", label: "Skills" },
   { href: "#projects", label: "Projects" },
   { href: "#experience", label: "Experience" },
   { href: "#contact", label: "Contact" },
@@ -16,7 +25,7 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="py-12 border-t border-border">
+    <footer className="py-12 border-t border-border bg-[#0f0d14]">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Logo & Copyright */}
@@ -48,8 +57,10 @@ export const Footer = () => {
               <a
                 key={social.label}
                 href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={social.label}
-                className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all"
+                className="p-2.5 rounded-full glass hover:bg-primary/20 hover:text-primary transition-all duration-300"
               >
                 <social.icon className="w-5 h-5" />
               </a>

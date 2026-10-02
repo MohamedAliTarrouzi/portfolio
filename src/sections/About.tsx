@@ -4,30 +4,30 @@ const highlights = [
   {
     icon: Lightbulb,
     title: "Innovation",
-    description: "Creating scalable solutions through innovative thinking",
+    description: "Creating scalable solutions through innovative thinking and modern AI models.",
   },
   {
     icon: Mountain,
     title: "Persistence",
     description:
-      "Remaining on overcoming obstacles and challenges to deliver value",
+      "Dedicated to overcoming obstacles and complex engineering challenges to deliver value.",
   },
   {
     icon: Users,
     title: "Collaboration",
-    description: "Establishing strong relations with teammates and clients",
+    description: "Establishing strong relationships and effective teamwork with colleagues and clients.",
   },
 ];
 
 export const About = () => {
   return (
-    <section id="about" className="py-32 relative overflow-hidden">
+    <section id="about" className="py-32 relative overflow-hidden scroll-mt-24">
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Column */}
           <div className="space-y-8">
-            <div className="animated-fade-in">
-              <span className="text-secondary-foreground tex-sm font-medium tracking-wider uppercase">
+            <div className="animate-fade-in">
+              <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase">
                 About Me
               </span>
             </div>
@@ -42,26 +42,28 @@ export const About = () => {
 
             <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
               <p>
-                I am a final year software engineer student passionate about
-                Artificial Intelligence and Data Science with over 2 years of
-                experience through developping applications and intelligent
-                services in academic and intership environments. I integrated in
-                this field through my university course and through it I found
-                my passion through crafting intelligent and innovative services.
+                I am a final year software engineering student passionate about Artificial Intelligence and Data Science with over 2 years of experience developing applications and intelligent services in academic and internship environments. I integrated into this field through my university program, where I discovered my passion for crafting intelligent, robust, and innovative AI-driven software.
               </p>
             </div>
             <div className="glass rounded-2xl p-6 glow-border animate-fade-in animation-delay-300">
-              <p className="text-lg font-medium italic text-foreground">"For in the dew of little things the heart finds its morning and is refreshed. " -Kahlil Gibran</p>
+              <p className="text-lg font-medium italic text-foreground">
+                "For in the dew of little things the heart finds its morning and is refreshed." — Kahlil Gibran
+              </p>
             </div>
           </div>
-          {/*Right Column - Highlights*/}
+
+          {/* Right Column - Highlights */}
           <div className="grid sm:grid-cols-2 gap-6">
-            {highlights.map((item,idx)=>(
-              <div key={idx} className="glass p-6 rounded-2xl animate-fade-in" style={{animationDelay:`${(idx+1)*100}ms`}}>
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 hover:bg-primary/20">
-                  <item.icon className="w-6 h-6 text-primary"/>
+            {highlights.map((item, idx) => (
+              <div
+                key={idx}
+                className="glass p-6 rounded-2xl animate-fade-in hover:border-primary/50 transition-all duration-300"
+                style={{ animationDelay: `${(idx + 1) * 100}ms` }}
+              >
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 hover:bg-primary/20 transition-colors">
+                  <item.icon className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2 ">{item.title}</h3>
+                <h3 className="text-lg font-semibold mb-2 text-foreground">{item.title}</h3>
                 <p className="text-sm text-muted-foreground">{item.description}</p>
               </div>
             ))}
