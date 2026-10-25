@@ -106,8 +106,8 @@ export const Hero = () => {
                 Contact Me <ArrowRight className="w-5 h-5" />
               </Button>
               <AnimatedBorderButton
-                href={encodeURI("/Mohamed Ali Tarrouzi CV .pdf")}
-                download="Mohamed-Ali-Tarrouzi-CV.pdf"
+                href={encodeURI("/MohamedAliTarrouzi_eng.pdf")}
+                download="MohamedAliTarrouzi_eng.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >
